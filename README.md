@@ -2,4 +2,4 @@
 Серверная часть Android приложения potions
 
 ### Ссылки: 
-#### [Схема базы данных](https://github.com/PcheLL/MAVERI/blob/master/Documentation/MAVERI.md)
+#### [Схема базы данных](https://github.com/FloY1/Potions_server/blob/master/Documentation/dbDiagram.png)
