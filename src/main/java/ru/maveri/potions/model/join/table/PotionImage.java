@@ -8,6 +8,7 @@ import ru.maveri.potions.model.User;
 import ru.maveri.potions.model.join.UserPotionKey;
 
 import javax.persistence.*;
+import java.awt.*;
 
 @Data
 @Entity
@@ -32,14 +33,5 @@ public class PotionImage {
     @ManyToOne
     @MapsId("image_url_id")
     private ImageUrl imageUrl;
-
-
-
-
-
-
-
-
-
 
 }
