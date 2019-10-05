@@ -1,6 +1,7 @@
 package ru.maveri.potions.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import ru.maveri.potions.model.join.table.PotionImage;
 

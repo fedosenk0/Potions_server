@@ -1,6 +1,7 @@
 package ru.maveri.potions.model.join.table;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import ru.maveri.potions.model.ImageUrl;
 import ru.maveri.potions.model.Potion;
@@ -21,6 +22,7 @@ public class PotionImage {
     @ManyToOne
     @MapsId("user_id")
     @JoinColumn(name = "user_id")
+    @JsonIgnore
     private User users;
 
     @ManyToOne

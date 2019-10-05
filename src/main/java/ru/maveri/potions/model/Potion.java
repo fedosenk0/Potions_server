@@ -1,11 +1,10 @@
 package ru.maveri.potions.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import ru.maveri.potions.model.join.table.PotionImage;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Data
 @Entity
@@ -15,6 +14,7 @@ public class Potion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
     private int id;
 
 
@@ -23,6 +23,7 @@ public class Potion {
 
 
     private String name;
+
 
     private String description;
 
