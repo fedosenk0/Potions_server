@@ -13,7 +13,7 @@ import java.awt.*;
 @Data
 @Entity
 @Table
-public class PotionImage {
+public class UserPotion {
 
     @EmbeddedId
     private UserPotionKey id;
