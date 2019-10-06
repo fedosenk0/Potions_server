@@ -34,4 +34,10 @@ public class PotionImage {
     @MapsId("image_url_id")
     private ImageUrl imageUrl;
 
+    private int amount;
+
+    private long getImageId(){
+        return potion.getId();
+    }
+
 }
