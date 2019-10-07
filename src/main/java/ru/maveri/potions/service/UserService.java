@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import ru.maveri.potions.model.Potion;
-import ru.maveri.potions.model.join.table.PotionImage;
+import ru.maveri.potions.model.join.table.UserPotion;
 import ru.maveri.potions.repo.ImageRepo;
 import ru.maveri.potions.repo.UserRepo;
 
@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.*;
-import java.util.concurrent.atomic.AtomicReference;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -32,10 +32,10 @@ public class UserService {
     }
 
     public List<Long> getImageId(Long id){
-        List<PotionImage> tempList;
+        List<UserPotion> tempList;
         List<Long> idList = new ArrayList<>();
         tempList = userRepo.findById(Long.valueOf(1)).get().getPotions();
-        for (PotionImage z:tempList) {
+        for (UserPotion z:tempList) {
             idList.add(z.getImageUrl().getId());
         }
         return idList;
@@ -49,4 +49,7 @@ public class UserService {
         Files.copy(imagePath,response.getOutputStream());
     }
 
+    public List<UserPotion> getPotions(Long id) {
+        return userRepo.findById(id).get().getPotions();
+    }
 }

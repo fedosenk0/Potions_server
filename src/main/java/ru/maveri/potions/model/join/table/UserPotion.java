@@ -2,6 +2,7 @@ package ru.maveri.potions.model.join.table;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import lombok.Data;
 import ru.maveri.potions.model.ImageUrl;
 import ru.maveri.potions.model.Potion;
@@ -17,6 +18,7 @@ import java.awt.*;
 public class UserPotion {
 
     @EmbeddedId
+    @JsonIgnore
     private UserPotionKey id;
 
     @ManyToOne
@@ -28,16 +30,20 @@ public class UserPotion {
     @ManyToOne
     @MapsId("potion_id")
  // @JoinColumn(name = "potion_id")
+    @JsonUnwrapped
     private Potion potion;
 
 
 
     @ManyToOne
     @MapsId("image_url_id")
+
+    @JsonIgnore
     private ImageUrl imageUrl;
 
     private int amount;
 
+    @JsonUnwrapped
     private long getImageId(){
         return potion.getId();
     }
