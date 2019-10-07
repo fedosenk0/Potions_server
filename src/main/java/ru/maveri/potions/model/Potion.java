@@ -2,10 +2,8 @@ package ru.maveri.potions.model;
 
 
 import lombok.Data;
-import ru.maveri.potions.model.join.table.PotionImage;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Data
 @Entity
@@ -19,7 +17,7 @@ public class Potion {
 
 
 //    @OneToMany(mappedBy = "potion")
-//    private Set<PotionImage> potionImages;
+//    private Set<UserPotion> potionImages;
 
 
     private String name;
