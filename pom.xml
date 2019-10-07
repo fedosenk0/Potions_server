@@ -9,8 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>ru.maveri</groupId>
-    <artifactId>potions</artifactId>
-    <version>0.1-DEMO</version>
+    <artifactId>api</artifactId>
     <packaging>war</packaging>
     <name>potions</name>
     <description>Project for leave VF</description>

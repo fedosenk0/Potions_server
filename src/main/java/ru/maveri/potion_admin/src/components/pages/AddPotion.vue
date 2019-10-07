@@ -12,7 +12,7 @@
                     <v-row class="py-0 ma-0">
 
                         <v-col class="py-0 ma-0"  cols="12">
-                            <v-text-field label="Название"
+                            <v-text-field label="Пидор"
                                           v-model="potion.name"/>
                         </v-col>
 
@@ -91,7 +91,13 @@
                         </v-col>
 
                         <v-col cols="6">
-                            <v-btn text large color="primary">Добавить</v-btn>
+                            <v-btn text
+                                   large
+                                   color="primary"
+                                    @click="saveButton"
+                            >
+                                Добавить
+                            </v-btn>
                         </v-col>
 
                         <v-col cols="6">
@@ -113,23 +119,36 @@
 </template>
 
 <script>
+    import { mapActions } from 'vuex'
+
+
     export default {
         data () {
             return {
-                potion: [
-                    {name:""},
-                    {description:""},
-                    {   p1: 1},
-                    {   p2: 1},
-                    {   p3: 1},
-                    {   p4: 1},
-                ],
-                min: 0,
-                max: 6,
-
-
+                potion: {
+                    name:"",
+                    description:"",
+                       p1: 1,
+                       p2: 1,
+                       p3: 1,
+                       p4: 1,
+                },
             }
         },
+        methods:{
+            ...mapActions(['addPotion']),
+            saveButton(){
+                const potion = {
+                    name: this.potion.name,
+                    description: this.potion.description,
+                    p1: this.potion.p1,
+                    p2: this.potion.p2,
+                    p3: this.potion.p3,
+                    p4: this.potion.p4,
+                }
+                this.addPotion(potion)
+            }
+        }
 
     }
 </script>
