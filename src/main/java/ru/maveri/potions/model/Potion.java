@@ -19,7 +19,7 @@ public class Potion {
 
 
 //    @OneToMany(mappedBy = "potion")
-//    private Set<PotionImage> potionImages;
+//    private Set<UserPotion> potionImages;
 
 
     private String name;

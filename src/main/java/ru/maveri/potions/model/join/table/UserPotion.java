@@ -14,7 +14,7 @@ import java.awt.*;
 @Data
 @Entity
 @Table
-public class PotionImage {
+public class UserPotion {
 
     @EmbeddedId
     private UserPotionKey id;
@@ -35,5 +35,11 @@ public class PotionImage {
     @ManyToOne
     @MapsId("image_url_id")
     private ImageUrl imageUrl;
+
+    private int amount;
+
+    private long getImageId(){
+        return potion.getId();
+    }
 
 }
