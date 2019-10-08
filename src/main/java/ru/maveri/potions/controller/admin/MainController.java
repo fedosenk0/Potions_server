@@ -14,7 +14,7 @@ public class MainController {
     public String mainUs(){
 
 
-        return "index.html";
+        return "index";
     }
 
 }

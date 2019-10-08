@@ -14,7 +14,7 @@ import javax.persistence.*;
 public class Coordinate {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private long latitude;

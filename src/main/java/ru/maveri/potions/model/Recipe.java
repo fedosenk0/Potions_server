@@ -13,13 +13,13 @@ public class Recipe {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
 
     @ManyToMany(mappedBy = "recipes",
                 fetch = FetchType.LAZY)
-    private Set<User> user;
+    private List<User> user;
 
 
     @ManyToOne

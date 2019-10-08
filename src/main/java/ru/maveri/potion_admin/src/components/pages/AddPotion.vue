@@ -11,9 +11,12 @@
                     <span>Новое зелье</span>
                     <v-row class="py-0 ma-0">
 
-                        <v-col class="py-0 ma-0"  cols="12">
-                            <v-text-field label="Пидор"
+                        <v-col class="py-0 ma-0"  cols="8">
+                            <v-text-field label="Название"
                                           v-model="potion.name"/>
+                        </v-col>
+                        <v-col class="py-0 ma-0"  cols="3">
+                            <input type="file" @change="onFileSelected">
                         </v-col>
 
 
@@ -133,20 +136,24 @@
                        p3: 1,
                        p4: 1,
                 },
+                selectedFile: null
             }
         },
         methods:{
             ...mapActions(['addPotion']),
             saveButton(){
-                const potion = {
-                    name: this.potion.name,
-                    description: this.potion.description,
-                    p1: this.potion.p1,
-                    p2: this.potion.p2,
-                    p3: this.potion.p3,
-                    p4: this.potion.p4,
+                const data = {
+                    potion: this.potion,
+                    file: this.selectedFile
                 }
-                this.addPotion(potion)
+                this.addPotion(data)
+            },
+            onFileSelected(event){
+
+
+                this.selectedFile = event.target.files[0]
+                console.log(this.selectedFile.name);
+
             }
         }
 

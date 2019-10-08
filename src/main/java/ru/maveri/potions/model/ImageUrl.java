@@ -11,10 +11,18 @@ import javax.persistence.*;
 public class ImageUrl {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String url;
 
 
+
+    public ImageUrl(String url) {
+        this.url =  url;
+
+    }
+    public ImageUrl() {
+
+    }
 }
