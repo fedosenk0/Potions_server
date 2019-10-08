@@ -5,6 +5,7 @@ import lombok.Data;
 import ru.maveri.potions.model.join.table.UserPotion;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -29,7 +30,7 @@ public class User {
 
 
     @OneToMany(mappedBy = "users")
-    Set<UserPotion> potions;
+    List<UserPotion> potions;
 
 
 
@@ -40,7 +41,7 @@ public class User {
             joinColumns = {@JoinColumn(name = "user_id")},
             inverseJoinColumns = {@JoinColumn (name = "recipe_id")}
     )
-    private Set<Recipe> recipes;
+    private List<Recipe> recipes;
 
 
 

@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/admin")
+@RequestMapping
 public class MainController {
 
 
@@ -21,7 +21,8 @@ public class MainController {
 
         model.addAttribute("isDevMode", "dev".equals(devMode));
 
-        return "index.html";
+        return "index";
     }
+
 
 }

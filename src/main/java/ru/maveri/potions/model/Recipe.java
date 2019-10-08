@@ -19,7 +19,7 @@ public class Recipe {
 
     @ManyToMany(mappedBy = "recipes",
                 fetch = FetchType.LAZY)
-    private Set<User> user;
+    private List<User> user;
 
 
     @ManyToOne

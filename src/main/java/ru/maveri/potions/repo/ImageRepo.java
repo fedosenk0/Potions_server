@@ -5,5 +5,4 @@ import ru.maveri.potions.model.ImageUrl;
 
 public interface ImageRepo extends CrudRepository<ImageUrl,Long> {
 
-
 }
