@@ -2,6 +2,8 @@ package ru.maveri.potions.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonView;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -36,5 +38,8 @@ public class Potion {
 
     private double p4;
 
+    public String getName() {
+        return name;
+    }
 
 }

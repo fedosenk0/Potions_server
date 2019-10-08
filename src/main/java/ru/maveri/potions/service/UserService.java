@@ -4,6 +4,7 @@ package ru.maveri.potions.service;
         import org.springframework.beans.factory.annotation.Value;
         import org.springframework.stereotype.Service;
         import ru.maveri.potions.model.Coordinate;
+        import ru.maveri.potions.model.Potion;
         import ru.maveri.potions.model.Recipe;
         import ru.maveri.potions.model.join.table.UserPotion;
         import ru.maveri.potions.repo.CoordinateRepo;
@@ -15,7 +16,9 @@ package ru.maveri.potions.service;
         import java.nio.file.Files;
         import java.nio.file.Path;
         import java.util.ArrayList;
+        import java.util.HashMap;
         import java.util.List;
+        import java.util.Map;
 
 @Service
 public class UserService {
@@ -69,7 +72,19 @@ public class UserService {
         return coordinateList;
     }
 
-    public List<Recipe> getRecipe(long id){
-           return userRepo.findById(id).get().getRecipes();
+    public Map<String,String> getRecipe(long id){
+        Map<String,String> recipeMap = new HashMap<>();
+        List <Recipe> recipe = userRepo.findById(id).get().getRecipes();
+        /*recipeMap.put("Первое зелье", recipe.getFirstPotionName());
+        recipeMap.put("Второе зелье", recipe.getSecondPotionName());
+        recipeMap.put("Третье зелье", recipe.getResultPotionName());*/
+           //return userRepo.findById(id).get().getRecipes();
+        //return recipeMap;
+        for (Recipe z:recipe) {
+            recipeMap.put("Первое зелье", z.getFirstPotionName());
+            recipeMap.put("Второе зелье", z.getSecondPotionName());
+            recipeMap.put("Третье зелье", z.getResultPotionName());
+        }
+        return recipeMap;
     }
 }

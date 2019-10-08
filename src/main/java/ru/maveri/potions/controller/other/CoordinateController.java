@@ -1,6 +1,7 @@
 package ru.maveri.potions.controller.other;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.maveri.potions.model.Coordinate;
@@ -19,7 +20,7 @@ public class CoordinateController {
         this.userService = userService;
     }
 
-    @RequestMapping()
+    @GetMapping()
     public List<Coordinate> getCoordinate(){
         long id = 1;
        return userService.getCoordinates(id,10);
