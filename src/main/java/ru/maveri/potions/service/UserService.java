@@ -4,6 +4,7 @@ package ru.maveri.potions.service;
         import org.springframework.beans.factory.annotation.Value;
         import org.springframework.stereotype.Service;
         import ru.maveri.potions.model.Coordinate;
+        import ru.maveri.potions.model.Recipe;
         import ru.maveri.potions.model.join.table.UserPotion;
         import ru.maveri.potions.repo.CoordinateRepo;
         import ru.maveri.potions.repo.ImageRepo;
@@ -66,5 +67,9 @@ public class UserService {
             coordinateList.remove(coordinate);
         }
         return coordinateList;
+    }
+
+    public List<Recipe> getRecipe(long id){
+           return userRepo.findById(id).get().getRecipes();
     }
 }
