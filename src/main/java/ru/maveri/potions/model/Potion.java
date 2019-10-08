@@ -24,6 +24,7 @@ public class Potion {
 
     private String name;
 
+
     private String description;
 
     //Параметры не именованы переименовать!!!!!
