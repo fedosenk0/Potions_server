@@ -3,7 +3,6 @@ package ru.maveri.potions.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import ru.maveri.potions.model.Potion;
 import ru.maveri.potions.model.join.table.UserPotion;
 import ru.maveri.potions.repo.ImageRepo;
 import ru.maveri.potions.repo.UserRepo;
@@ -49,7 +48,7 @@ public class UserService {
         Files.copy(imagePath,response.getOutputStream());
     }
 
-    public List<UserPotion> getPotions(Long id) {
-        return userRepo.findById(id).get().getPotions();
+    public List<UserPotion> getPotions() {
+        return userRepo.findById((long) 1).get().getPotions();
     }
 }

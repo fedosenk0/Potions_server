@@ -25,9 +25,9 @@ public class PotionController {
         this.userService = userService;
     }
 
-    @GetMapping("/{id}")
-    public List<UserPotion> getUsersPotions(@PathVariable Long id){
-        return userService.getPotions(id);
+    @GetMapping()
+    public List<UserPotion> getUsersPotions(){
+        return userService.getPotions();
 
     }
 }
