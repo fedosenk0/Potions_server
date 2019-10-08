@@ -11,9 +11,12 @@
                     <span>Новое зелье</span>
                     <v-row class="py-0 ma-0">
 
-                        <v-col class="py-0 ma-0"  cols="12">
+                        <v-col class="py-0 ma-0"  cols="8">
                             <v-text-field label="Название"
                                           v-model="potion.name"/>
+                        </v-col>
+                        <v-col class="py-0 ma-0"  cols="3">
+                            <input type="file" @change="onFileSelected">
                         </v-col>
 
 
@@ -91,7 +94,13 @@
                         </v-col>
 
                         <v-col cols="6">
-                            <v-btn text large color="primary">Добавить</v-btn>
+                            <v-btn text
+                                   large
+                                   color="primary"
+                                    @click="saveButton"
+                            >
+                                Добавить
+                            </v-btn>
                         </v-col>
 
                         <v-col cols="6">
@@ -113,23 +122,40 @@
 </template>
 
 <script>
+    import { mapActions } from 'vuex'
+
+
     export default {
         data () {
             return {
-                potion: [
-                    {name:""},
-                    {description:""},
-                    {   p1: 1},
-                    {   p2: 1},
-                    {   p3: 1},
-                    {   p4: 1},
-                ],
-                min: 0,
-                max: 6,
-
-
+                potion: {
+                    name:"",
+                    description:"",
+                       p1: 1,
+                       p2: 1,
+                       p3: 1,
+                       p4: 1,
+                },
+                selectedFile: null
             }
         },
+        methods:{
+            ...mapActions(['addPotion']),
+            saveButton(){
+                const data = {
+                    potion: this.potion,
+                    file: this.selectedFile
+                }
+                this.addPotion(data)
+            },
+            onFileSelected(event){
+
+
+                this.selectedFile = event.target.files[0]
+                console.log(this.selectedFile.name);
+
+            }
+        }
 
     }
 </script>

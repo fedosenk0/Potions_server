@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -14,8 +15,7 @@ public class Potion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonIgnore
-    private int id;
+    private long id;
 
 
 //    @OneToMany(mappedBy = "potion")
@@ -36,5 +36,10 @@ public class Potion {
 
     private double p4;
 
+    @JsonIgnore
+
+    @OneToMany(cascade=CascadeType.ALL)
+    @JoinColumn(name = "potion_id")
+    private List<ImageUrl> images;
 
 }

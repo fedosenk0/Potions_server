@@ -1,7 +1,6 @@
 <template>
   <v-app>
     <app-bar/>
-
     <v-content>
       <add-potion></add-potion>
     </v-content>
