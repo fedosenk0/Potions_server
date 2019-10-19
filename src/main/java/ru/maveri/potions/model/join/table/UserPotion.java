@@ -4,6 +4,7 @@ package ru.maveri.potions.model.join.table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import lombok.Data;
+import org.springframework.stereotype.Component;
 import ru.maveri.potions.model.ImageUrl;
 import ru.maveri.potions.model.Potion;
 import ru.maveri.potions.model.User;
@@ -15,6 +16,7 @@ import java.awt.*;
 @Data
 @Entity
 @Table
+@Component
 public class UserPotion {
 
     @EmbeddedId

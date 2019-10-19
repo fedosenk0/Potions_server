@@ -13,6 +13,7 @@ import javax.persistence.*;
 @Data
 @Table
 @Entity
+@Component
 public class Coordinate {
 
     @Id

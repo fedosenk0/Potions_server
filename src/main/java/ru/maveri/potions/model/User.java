@@ -2,6 +2,7 @@ package ru.maveri.potions.model;
 
 
 import lombok.Data;
+import org.springframework.stereotype.Component;
 import ru.maveri.potions.model.join.table.UserPotion;
 
 import javax.persistence.*;
@@ -11,6 +12,7 @@ import java.util.Set;
 @Data
 @Table(name = "users")
 @Entity
+@Component
 public class User {
 
     @Id

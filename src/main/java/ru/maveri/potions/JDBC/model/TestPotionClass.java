@@ -1,23 +1,10 @@
-package ru.maveri.potions.model;
-
+package ru.maveri.potions.JDBC.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonView;
 import lombok.Data;
-import org.springframework.stereotype.Component;
-
-import javax.persistence.*;
 
 @Data
-@Entity
-@Table
-@Component
-public class Potion {
-
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class TestPotionClass {
     @JsonIgnore
     private int id;
 
@@ -40,8 +27,5 @@ public class Potion {
 
     private double p4;
 
-    public String getName() {
-        return name;
-    }
 
 }
